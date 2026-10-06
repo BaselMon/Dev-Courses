@@ -1,0 +1,104 @@
+
+
+
+[
+  {
+    "id": 1,
+    "title": "React Basics",
+    "level": "Beginner",
+    "category": "Frontend",
+    "duration": "6 hrs",
+    "price": 20
+  },
+
+  {
+    "id": 2,
+    "title": "JavaScript ES6",
+    "level": "Beginner",
+    "category": "Frontend",
+    "duration": "8 hrs",
+    "price": 25
+
+  },
+
+  {
+    "id": 3,
+    "title": "CSS Flexbox & Grid",
+    "level": "Beginner",
+    "category": "Frontend",
+    "duration": "4 hrs",
+    "price": 15
+
+  },
+
+  {
+
+    "id": 4,
+    "title": "React Hooks Deep Dive",
+    "level": "Intermediate",
+    "category": "Frontend",
+    "duration": "5 hrs",
+    "price": 30
+  },
+
+  {
+
+    "id": 5,
+    "title": "REST APIs with Fetch",
+    "level": "Intermediate",
+    "category": "Frontend",
+    "duration": "7 hrs",
+    "price": 28
+  },
+
+  {
+
+    "id": 6,
+    "title": "State Management",
+    "level": "Advanced",
+    "category": "Frontend",
+    "duration": "9 hrs",
+    "price": 40
+  },
+
+  {
+
+    "id": 7,
+    "title": "Hoisting",
+    "level": "Beginner",
+    "category": "Frontend",
+    "duration": "4 hrs",
+    "price": 13
+  },
+
+  {
+
+    "id": 8,
+    "title": "HTTP Servers",
+    "level": "Beginner",
+    "category": "Backend",
+    "duration": "3 hrs",
+    "price": 20
+  },
+
+  {
+
+    "id": 9,
+    "title": "SQL",
+    "level": "Intermediate",
+    "category": "Backend",
+    "duration": "6 hrs",
+    "price": 30
+  },
+
+  {
+
+    "id": 10,
+    "title": "C#",
+    "level": "Beginner",
+    "category": "Backend",
+    "duration": "10 hrs",
+    "price": 35
+  }
+
+]
