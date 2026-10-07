@@ -27,10 +27,20 @@ function App() {
 
   }, [])
 
-const filteredCourses = courses.filter((course) =>{
-  return()
+
+  const filteredCourses = courses.filter((course) => {
+  const matchesSearch = course.title
+    .toLowerCase()
+    .includes(search.toLowerCase());
+
+  const matchesLevel =level ==="" || course.level ===level;
+
+  const matchesCategory =category ==="" || course.category ===category;
+
+  return matchesSearch && matchesLevel && matchesCategory;
 });
 
+ 
   return (
     <>
       <Header />
