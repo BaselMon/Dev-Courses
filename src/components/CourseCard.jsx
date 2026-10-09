@@ -1,5 +1,6 @@
 
-function CourseCard({ course }) {
+function CourseCard({ course, enrolled, setEnrolled }) {
+    const isEnrolled = enrolled.some((enroll) => enroll.id === course.id)
     return (
 
         <div className="course-card">
@@ -7,9 +8,21 @@ function CourseCard({ course }) {
 
             <span className="badge">{course.level}</span>
             <p>{course.duration} | ${course.price}</p>
+            {
+                isEnrolled ? 
+                (
+                    <button className="enroll-btn" 
+                    onClick={() => setEnrolled(enrolled.filter((enroll) => course.id !==enroll.id))} 
+                     >Remove</button>
+                )
 
-
-            <button className="enroll-btn">Enroll</button>
+                 :
+                (
+                    <button className="enroll-btn"
+                        onClick={() => setEnrolled([...enrolled, course])}
+                    >Enroll</button>
+                )
+            }
         </div>
 
 

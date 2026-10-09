@@ -14,7 +14,15 @@ function App() {
   const [search, setSearch] = useState("");
   const [level, setLevel] = useState("");
   const [category, setCategory] = useState("");
+  const [enrolled, setEnrolled] = useState(JSON.parse(localStorage.getItem("enrolled" ))|| []);
 
+  useEffect(()=>{
+    (localStorage.setItem("enrolled", JSON.stringify(enrolled)))
+
+
+  },[
+    enrolled
+  ])
   useEffect(() => {
 
     fetch("/courses.json")
@@ -29,32 +37,44 @@ function App() {
 
 
   const filteredCourses = courses.filter((course) => {
-  const matchesSearch = course.title
-    .toLowerCase()
-    .includes(search.toLowerCase());
+    const matchesSearch = course.title
+      .toLowerCase()
+      .includes(search.toLowerCase());
 
-  const matchesLevel =level ==="" || course.level ===level;
+    const matchesLevel = level === "" || course.level === level;
 
-  const matchesCategory =category ==="" || course.category ===category;
+    const matchesCategory = category === "" || course.category === category;
 
-  return matchesSearch && matchesLevel && matchesCategory;
-});
+    return matchesSearch && matchesLevel && matchesCategory;
+  });
 
- 
+
   return (
-    <>
-      <Header />
-      <Filters />
+    <div className="main-content">
+      <Header enrolled={enrolled.length}/>
+      <Filters
+      setSearch={setSearch} setLevel={setLevel} setCategory={setCategory}
+        search={search} level={level} category={category}
+      />
 
       {
         loading ? (<p>Loading courses...</p>) :
-          (<CourseList courses={filteredCourses} />)
+          (<CourseList
+            courses={filteredCourses}
+            totalCourses={courses.length}
+            setSearch={setSearch}
+            setLevel={setLevel}
+            setCategory={setCategory}
+            enrolled={enrolled}
+            setEnrolled={setEnrolled}
+         
+            />)
       }
 
 
       <Footer />
 
-    </>
+    </div>
   )
 }
 
