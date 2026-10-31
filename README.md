@@ -1,16 +1,95 @@
-# React + Vite
+# DevCourses – React Course Catalog
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A simple and interactive course catalog application built with React. Users can browse available courses, search by course title, and filter courses by level and category.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Course Listing:** Display available courses dynamically.
+- **Search:** Search courses by title (case-insensitive).
+- **Filter by Level:** Filter courses by Beginner, Intermediate, or Advanced.
+- **Filter by Category:** Filter courses by category, such as Frontend and Backend.
+- **Combined Filtering:** Apply search and multiple filters simultaneously.
+- **Loading State:** Display a loading message while fetching course data.
+- **Reusable Components:** Organized component structure for better maintainability.
 
-## React Compiler
+## Built With
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- JavaScript (ES6+)
+- HTML5
+- CSS3
+- Vite
 
-## Expanding the Oxlint configuration
+## Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+```text
+src/
+├── components/
+│   ├── Header.jsx
+│   ├── Filters.jsx
+│   ├── CourseList.jsx
+│   ├── CourseCard.jsx
+│   └── Footer.jsx
+├── App.jsx
+└── main.jsx
+
+public/
+└── courses.json
+```
+
+## Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone YOUR_REPOSITORY_URL
+```
+
+### 2. Navigate to the project directory
+
+```bash
+cd YOUR_PROJECT_FOLDER
+```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Run the development server
+
+```bash
+npm run dev
+```
+
+Open the local URL displayed in your terminal to view the application.
+
+## Data Source
+
+Course information is stored in `public/courses.json` and retrieved using the Fetch API inside React's `useEffect` hook.
+
+Each course contains:
+
+- `id`
+- `title`
+- `level`
+- `category`
+- `duration`
+- `price`
+
+## Learning Objectives
+
+This project provides practical experience with:
+
+- React components and props
+- React Hooks (`useState` and `useEffect`)
+- Fetch API and JSON data
+- Rendering lists using `.map()`
+- Filtering arrays using `.filter()`
+- Controlled form inputs
+- Component-based architecture
+
+## License
+
+This project was created for educational and learning purposes.
